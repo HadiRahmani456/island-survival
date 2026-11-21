@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>جزیره: بقا</title>
+  <link rel="stylesheet" href="/src/ui/styles.css">
+</head>
+<body>
+  <!-- HUD -->
+  <div id="hud-left">
+    <div class="hp-row">
+      <span class="hp-label">❤️</span>
+      <div class="hp-bar"><div class="hp-fill" id="hp-fill"></div></div>
+      <b id="hp-num">۱۰۰</b>
+    </div>
+    <div class="stat-row"><span class="icon">⚔️</span>سلاح: <b id="cur-weapon">مشت</b></div>
+    <div id="durability-row" style="display:none">دوام: <b id="durability">۰/۲۰</b></div>
+    <div class="stat-row"><span class="icon">💀</span>کشته‌ها: <b id="kills-num">۰</b></div>
+  </div>
+
+  <div id="hud-right">
+    <div class="stat-row"><span class="icon">🪨</span><span class="val">سنگ: <b id="h-stone">۰</b></span></div>
+    <div class="stat-row"><span class="icon">🪵</span><span class="val">چوب: <b id="h-wood">۰</b></span></div>
+    <div class="stat-row"><span class="icon">➶</span><span class="val">تیر: <b id="h-arrows">۰</b></span></div>
+    <div class="stat-row"><span class="icon">🔮</span><span class="val">مانا: <b id="h-mana">۰</b></span></div>
+    <div class="stat-row"><span class="icon">🍎</span><span class="val">میوه: <b id="h-fruit">۰</b></span></div>
+  </div>
+
+  <div id="fps-counter">FPS: --</div>
+
+  <div id="survival-hud">
+    <div><span>🌊 روز</span><b id="day-num">۱</b></div>
+    <div><span>🧟 موج</span><b id="wave-num">۱</b></div>
+    <div><span>⏱️ زمان بقا</span><b id="survival-time">۰۰:۰۰</b></div>
+    <div class="stamina-line">
+      <span>⚡ استقامت</span>
+      <div class="stamina-track"><i id="stamina-fill"></i></div>
+    </div>
+  </div>
+
+  <div id="minimap-wrap">
+    <div class="mini-title">نقشه جزیره</div>
+    <canvas id="minimap" width="160" height="160"></canvas>
+  </div>
+
+  <div id="crosshair"></div>
+  <div id="hint"></div>
+  <div id="toast"></div>
+  <div id="vignette"></div>
+
+  <div id="help">
+    حرکت: <kbd>WASD</kbd> | دویدن: <kbd>Shift</kbd> | حمله: <kbd>کلیک چپ</kbd> / <kbd>Space</kbd><br>
+    جادو: <kbd>Q</kbd> یا کلیک راست | تعامل: <kbd>E</kbd> | خوردن: <kbd>G</kbd><br>
+    ساخت: شمشیر <kbd>K</kbd> | تبر <kbd>C</kbd> | کمان <kbd>B</kbd> | تیر <kbd>V</kbd><br>
+    سلاح: <kbd>۱ تا ۴</kbd> | توقف/ادامه: <kbd>P</kbd> | راهنما: <kbd>H</kbd>
+  </div>
+
+  <div id="click-play">
+    <div class="big-icon">🏝️</div>
+    <div>برای شروع کلیک کن</div>
+    <small>منابع جمع کن، ابزار بساز و موج‌های زامبی را زنده بمان!<br>با Shift بدو؛ شب‌ها دشمنان سریع‌تر و پرتعدادتر می‌شوند.</small>
+  </div>
+
+  <div id="pause-screen">
+    <section>
+      <div class="pause-icon">Ⅱ</div>
+      <h1>بازی متوقف شد</h1>
+      <p>برای ادامه، کلید P یا دکمه زیر را بزن</p>
+      <button id="resume-btn">ادامه بازی</button>
+    </section>
+  </div>
+
+  <div id="gameover" style="display:none;">
+    <h1>💀 پایان بقا</h1>
+    <p>کشته‌ها: <span id="final-kills">۰</span> | موج: <span id="final-wave">۱</span></p>
+    <p>زمان بقا: <span id="final-time">۰۰:۰۰</span></p>
+    <button id="restart-btn">شروع دوباره</button>
+    <small>یا کلید R را بزن</small>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
